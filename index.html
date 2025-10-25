@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown to New Year 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+<script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // Primary dark color for general use
+              'primary-dark': '#010418', // Even darker base
+              // Vibrant pink accent
+              'accent-pink': '#ec4899', 
+            },
+            // Custom radial gradient for the body
+            backgroundImage: {
+              // 4-Color Gradient: Dark Blue, Deep Purple, Electric Blue, Black
+              'cosmic-mix': 'radial-gradient(at 50% 100%, #3b82f6 0%, #7c3aed 35%, #0f172a 70%, #010418 100%)',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      /* 1. NEON GLOW ADJUSTMENT: 
+         - Reduced the number of shadows and the spread/blur radius. 
+         - This makes the numbers look sharper and less blurry.
+      */
+      .neon-glow-sharp {
+        text-shadow: 
+          0 0 5px rgba(236, 72, 153, 0.5), /* Faint inner shadow */
+          0 0 10px #ec4899;                /* Sharper, dominant glow */
+      }
+      
+      /* Ensure the heading message after expiration is also prominent */
+      .countdown h1 {
+        font-size: 2rem; /* h1 size for expired message */
+        font-weight: 800;
+        text-align: center;
+        color: #ec4899;
+        /* Optional: give the expired message the same glow */
+        text-shadow: 0 0 5px rgba(236, 72, 153, 0.5), 0 0 10px #ec4899; 
+      }
+    </style>
+  </head>
+  
+  <body class="bg-primary-dark bg-cool-gradient min-h-screen flex items-center justify-center p-4">
+    
+    <div class="wrapper bg-gray-900/90 p-8 md:p-16 rounded-3xl shadow-2xl w-full max-w-5xl text-white backdrop-blur-sm border border-gray-700/50">
+      
+      <div class="heading text-center mb-12">
+        <h3 class="text-xl md:text-2xl font-semibold text-gray-400 tracking-widest uppercase mb-3">
+          COUNTDOWN TILL
+        </h3>
+        <h1 class="text-7xl md:text-9xl font-black text-accent-pink tracking-tight neon-glow-sharp">
+          2026
+        </h1>
+      </div>
+      
+      <div class="countdown flex justify-center flex-wrap gap-5 md:gap-10">
+        
+        <div class="box flex flex-col items-center justify-center bg-gray-900/70 p-6 rounded-xl min-w-[130px] md:min-w-[150px] shadow-xl transform hover:scale-[1.03] transition-transform duration-300 border border-accent-pink/50">
+          <span class="num text-6xl md:text-8xl font-extrabold text-accent-pink neon-glow-sharp" id="day-box">67</span>
+          <span class="text text-sm md:text-base text-gray-400 uppercase mt-2 tracking-wider">DAYS</span>
+        </div>
+
+        <div class="box flex flex-col items-center justify-center bg-gray-900/70 p-6 rounded-xl min-w-[130px] md:min-w-[150px] shadow-xl transform hover:scale-[1.03] transition-transform duration-300 border border-accent-pink/50">
+          <span class="num text-6xl md:text-8xl font-extrabold text-accent-pink neon-glow-sharp" id="hr-box">11</span>
+          <span class="text text-sm md:text-base text-gray-400 uppercase mt-2 tracking-wider">HOURS</span>
+        </div>
+
+        <div class="box flex flex-col items-center justify-center bg-gray-900/70 p-6 rounded-xl min-w-[130px] md:min-w-[150px] shadow-xl transform hover:scale-[1.03] transition-transform duration-300 border border-accent-pink/50">
+          <span class="num text-6xl md:text-8xl font-extrabold text-accent-pink neon-glow-sharp" id="min-box">11</span>
+          <span class="text text-sm md:text-base text-gray-400 uppercase mt-2 tracking-wider">MINUTES</span>
+        </div>
+
+        <div class="box flex flex-col items-center justify-center bg-gray-900/70 p-6 rounded-xl min-w-[130px] md:min-w-[150px] shadow-xl transform hover:scale-[1.03] transition-transform duration-300 border border-accent-pink/50">
+          <span class="num text-6xl md:text-8xl font-extrabold text-accent-pink neon-glow-sharp" id="sec-box">25</span>
+          <span class="text text-sm md:text-base text-gray-400 uppercase mt-2 tracking-wider">SECONDS</span>
+        </div>
+        
+      </div>
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
